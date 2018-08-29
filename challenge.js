@@ -105,10 +105,10 @@ const missionStatementStringBuilder = () => {
     printToDom(newString, 'missionStatement');
 };
 
-// STATEMENTS FOR LOOP
+// STATEMENTS FUNCTION
 const statementsStringBuilder = () => {
     let newString = '';                               //newString hs to be outside for loop
-    for(let i=0; i < elizabethSanger.statements.length; i++) {
+    for(let i = 0; i < elizabethSanger.statements.length; i++) {
         newString +=`<div class="statement">`;
         newString +=    `<h3>${elizabethSanger.statements[i].statement}</h3>`;
         newString +=    `<h4>${elizabethSanger.statements[i].category}</h4>`;
@@ -117,10 +117,10 @@ const statementsStringBuilder = () => {
     printToDom(newString, 'statements');                 //printToDom has to be outside for loop
 };
 
-// EVENTS
+// EVENTS FUNCTION
 const eventsStringBuilder = () => {
     let newString = '';
-    for (i=0; i < elizabethSanger.events.length; i++) {
+    for (let i = 0; i < elizabethSanger.events.length; i++) {
         newString +=`<div class="events">`;
         newString +=    `<h4 class="eventsDate">Date: ${elizabethSanger.events[i].date}</h4>`;
         newString +=    `<p class="eventsTitle">Title: ${elizabethSanger.events[i].title}</p>`;
@@ -130,10 +130,10 @@ const eventsStringBuilder = () => {
     printToDom(newString, 'events');
 };
 
-// VOLUNTEERS (NAME, ADDRESS, EMAIL, PHONE, AVAILABILITY, ACTIVITIES)
+// VOLUNTEERS FUNCTION
 const volunteersStringBuilder = () => {
     let newString = '';
-    for (i=0; i < elizabethSanger.volunteers.length; i++) {
+    for (let i = 0; i < elizabethSanger.volunteers.length; i++) {
         newString += `<div class="volunteers">`;
         newString +=    `<h4 class="volunteers-name">${elizabethSanger.volunteers[i].name}</h4>`;
         newString +=    `<p>Address: ${elizabethSanger.volunteers[i].address}</p>`;
@@ -146,6 +146,21 @@ const volunteersStringBuilder = () => {
     printToDom(newString, 'volunteers');
 };
 
+const imagesStringBuilder = () => {
+    let newString = '';
+    for (let i = 0; i < elizabethSanger.images.length; i++) {
+        newString += `<div class="images">`;
+        newString +=    `<img src="${elizabethSanger.images[i].imageUrl}" alt="image"></img>`;
+        newString +=    `<h4>${elizabethSanger.images[i].type}</h4>`;
+        newString +=    `<p>${elizabethSanger.images[i].description}</p>`;
+        newString += `</div>`;
+    }
+    printToDom(newString, 'images');
+};
+
+
+
+
 // FUNCTIONS
 voterRegistrationStringBuilder();   //have to call function in order for it r
 donationFormStringBuilder();
@@ -155,6 +170,7 @@ missionStatementStringBuilder();
 statementsStringBuilder();
 eventsStringBuilder();
 volunteersStringBuilder();
+imagesStringBuilder();
 
 
 
