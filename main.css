@@ -1,10 +1,22 @@
 body {
     font-family: Helvetica, sans-serif;
-    background-color: lightblue;
+    background-color: lightgray;
 }
 
+h1 {
+    text-align: center;
+    margin: 30px;
+    color: salmon;
+}
+
+/* CONGRESSIONAL DISTRICT STYLING */
+.congressionalTitle {
+    text-align: center;
+}
+
+
 .statement {
-    background-color: lightgray;
+    background-color: lightblue;
     border: 2px solid black;
     width: 50%;
     margin: 20px;

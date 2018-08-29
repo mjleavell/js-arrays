@@ -89,7 +89,7 @@ const donationFormStringBuilder = () => {
 
 // CONGRESSIONAL DISTRICT FUNCTION
 const congressionalDistrictStringBuilder = () => {
-    const newString = `<p>Congressional District: ${elizabethSanger.congressionalDistrict}</p>`;
+    const newString = `<h3 class="congressionalTitle">Congressional District: ${elizabethSanger.congressionalDistrict}</h3>`;
     printToDom(newString, 'congressionalDistrict');
 };
 
@@ -110,8 +110,7 @@ const statementsStringBuilder = () => {
     let newString = '';                               //newString hs to be outside for loop
     for(let i = 0; i < elizabethSanger.statements.length; i++) {
         newString +=`<div class="statement">`;
-        newString +=    `<h3>${elizabethSanger.statements[i].statement}</h3>`;
-        newString +=    `<h4>${elizabethSanger.statements[i].category}</h4>`;
+        newString +=    `<h4>${elizabethSanger.statements[i].category}: ${elizabethSanger.statements[i].statement}</h4>`;
         newString +=`</div>`;
     }
     printToDom(newString, 'statements');                 //printToDom has to be outside for loop
