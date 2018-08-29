@@ -1,4 +1,11 @@
 body {
     font-family: Helvetica, sans-serif;
-    background-color: lightcoral;
+    background-color: lightblue;
+}
+
+.statement {
+    background-color: lightgray;
+    border: 2px solid black;
+    width: 50%;
+    margin: 20px;
 }

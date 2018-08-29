@@ -1,9 +1,11 @@
 // DATA STRUCTURE FOR CHALLENGE (4=ARRAYS; 5=STRINGS/NUMBERS)
+// CHALLENGE 1---PRINT ALL INFO TO THE DOM
+// CHALLENGE 2 NEED TO HAVE AT LEAST 9 FUNCTIONS
 let elizabethSanger = {
     congressionalDistrict: 5, // P TAG
     statements: [
-        { statement: "pie for everyone", category: "Jobs" },
-        { statement: "no taxes on pie", category: "Taxes" },
+        { statement: "Pie for everyone", category: "Jobs" },
+        { statement: "No taxes on pie", category: "Taxes" },
         { statement: "No working on friday", category: "Jobs" }
     ],
     donationFormUrl: 'www.google.com',  // ANCHOR TAG
@@ -67,44 +69,78 @@ let elizabethSanger = {
     voterRegistrationUrl: 'www.google.com'  //ANCHOR TAG
 };
 
-// CHALLENGE 1---PRINT ALL INFO TO THE DOM
-// CREATE 9 DIVS; WILL HAVE 10 FUNCTIONS
+// PRINT TO DOM FUNCTION
 const printToDom = (stringToPrint, divId) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = stringToPrint;  // not using += because we want to update string not add new one to it
 };
 
-// VOTER REGISTRATION
+// VOTER REGISTRATION FUNCTION
 const voterRegistrationStringBuilder = () => {
     const newString = `<a href="https://${elizabethSanger.voterRegistrationUrl}" target="_blank">Register to Vote Here</a>`;
     printToDom(newString, 'voterRegistration');
 };
-voterRegistrationStringBuilder();   //have to call function in order for it r
 
-// DONATION FORM
+// DONATION FORM FUNCTION
 const donationFormStringBuilder = () => {
     const newString = `<a href="https://${elizabethSanger.donationFormUrl}" target="_blank">Donate Here</a>`;
     printToDom(newString, 'donationForm');
 };
-donationFormStringBuilder();
 
-// CONGRESSIONAL DISTRICT
+// CONGRESSIONAL DISTRICT FUNCTION
 const congressionalDistrictStringBuilder = () => {
     const newString = `<p>Congressional District: ${elizabethSanger.congressionalDistrict}</p>`;
     printToDom(newString, 'congressionalDistrict');
 };
-congressionalDistrictStringBuilder();
 
-// BIOGRAPHY
+// BIOGRAPHY FUNCTION
 const biographyStringBuilder = () => {
     const newString = `<p>Biography: ${elizabethSanger.biography}</p>`;
     printToDom(newString, 'biography');
 };
-biographyStringBuilder();
+
+// MISSION STATEMENT
+const missionStatementStringBuilder = () => {
+    const newString = `<p>Mission Statement: ${elizabethSanger.biography}</p>`;
+    printToDom(newString, 'missionStatement');
+};
 
 // STATEMENTS FOR LOOP
+const statementsStringBuilder = () => {
+    let newString = '';                               //newString hs to be outside for loop
+    for(let i=0; i < elizabethSanger.statements.length; i++) {
+        newString +=`<div class="statement">`;
+        newString +=    `<h3>${elizabethSanger.statements[i].statement}</h3>`;
+        newString +=    `<h5>${elizabethSanger.statements[i].category}</h5>`;
+        newString +=`</div>`;
+    }
+    printToDom(newString, 'statements');                 //printToDom has to be outside for loop
+};
+
+// EVENTS
+// const eventsStringBuilder = () => {
+//     let newString = '';                               //newString hs to be outside for loop
+//     for(let i=0; i < elizabethSanger.events.length; i++) {
+//         newString +=`<div class="statement">`;
+//         newString +=    `<h3>${elizabethSanger.events[i].statement}</h3>`;
+//         newString +=    `<h5>${elizabethSanger.events[i].category}</h5>`;
+//         newString +=`</div>`;
+//     }
+//     printToDom(newString, 'events');                 //printToDom has to be outside for loop
+// };
 
 
+
+
+
+// FUNCTIONS
+voterRegistrationStringBuilder();   //have to call function in order for it r
+donationFormStringBuilder();
+congressionalDistrictStringBuilder();
+biographyStringBuilder();
+missionStatementStringBuilder();
+statementsStringBuilder();
+//eventsStringBuilder();
 
 
 
@@ -112,7 +148,9 @@ biographyStringBuilder();
 // add events function (adding somethign to array so use push method), 
 // add a volunteer, congressional district changes, or statement changes
 
-// const updateVoterRegistrationStringBuilder = () => {
-//     //do some stuff
+// const updateVoterRegistrationStringBuilder = (newUrl) => {
+//     elizabethSanger.voterRegistrationUrl = newUrl;
 //     voterRegistrationStringBuilder();
-//};
+// };
+
+// updateVoterRegistrationStringBuilder('www.usopen.org');
