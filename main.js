@@ -33,3 +33,28 @@ const palChecker = (word) => {
 palChecker('hannah'); //yes
 palChecker('racecar'); //yes
 palChecker('maggie'); //no
+
+
+// PUSH, POP, SHIFT, UNSHIT METHODS
+let animals = ['dogs', 'dolphins', 'whales', 'giraffe'];
+
+const lastItem = animals.pop(); // giraffe
+const firstItem = animals.shift(); // dogs
+//push adds to the end
+animals.push('grizzly bear');
+//  unshift adds to the beginning
+animals.unshift('baby hippo');  //['baby hippo', 'dogs', 'dolphins', 'whales', 'grizzly bear']
+console.log('animals: ', animals);
+
+
+// ****************FOR LOOPS******************
+    // 3 THINGS YOU NEED TO KNOW:
+        // 1. WHAT IS YOUR STARTING VALUE - 0
+        // 2. WHAT IS YOUR STOPPING VALUE - SOMETHING.LENGTH
+        // 3. HOW ARE YOU INCREMENTING - i++
+        // Syntax: for (starting; stopping; increment) {do something here}
+
+// console log all the animals
+for (let i = 0; i < animals.length; i++) {
+    console.log(animals[i]);
+}
