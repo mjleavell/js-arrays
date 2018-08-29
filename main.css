@@ -1,23 +1,119 @@
 body {
     font-family: Helvetica, sans-serif;
     background-color: lightgray;
+    margin: 75px;
 }
 
+/* TITLE STYLING */
 h1 {
     text-align: center;
-    margin: 30px;
+    margin: 15px;
     color: salmon;
 }
 
 /* CONGRESSIONAL DISTRICT STYLING */
 .congressionalTitle {
     text-align: center;
+    margin-bottom: 50px;
 }
 
+/* MISSION STATEMENT AND BIOGRAPHY STYLING */
+#missionStatement, #biography {
+    text-align: center;
+}
 
-.statement {
-    background-color: lightblue;
+/* STATEMENTS STYLING */
+#statements {
+    background-color: #b3e6ff;
     border: 2px solid black;
-    width: 50%;
-    margin: 20px;
+    width: 25%;
+    margin: 50px auto 25px auto;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+}
+
+.statement h4{
+    margin: 8px 0px 8px 0px;
+}
+
+/* EVENTS STYLING */
+#events {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.events {
+    border: 2px dashed black;
+    flex-flow: row wrap;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgoldenrodyellow;
+    width: 250px;
+}
+
+.events h4 {
+    text-align: center;
+    margin: 10px;
+}
+
+.events p {
+    margin: 5px;
+}
+
+/* IMAGES STYLING */
+#images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.images {
+    border: 2px dotted black;
+    background-color: palegreen;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.images img {
+    width: 250px;
+    height: 200px;
+    
+}
+
+.images h4, .images p {
+    margin: 15px;
+}
+
+/* VOLUNTEER STYLING */
+#volunteers {
+    display: flex;
+    margin-bottom: 50px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.volunteers {
+    border: 2px double black;
+    margin: 10px;
+    background-color: #e6ccff;
+    padding: 20px;
+    width: 250px;
+}
+
+.volunteers h4{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.volunteers p {
+    margin: 5px;
+    padding: 5px;
+}
+
+#donationForm, #voterRegistration {
+    margin: 15px;
 }
