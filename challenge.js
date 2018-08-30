@@ -174,12 +174,40 @@ imagesStringBuilder();
 
 
 // CHALLENGE 2
-// add events function (adding somethign to array so use push method), 
-// add a volunteer, congressional district changes, or statement changes
+// VOTER REGISTRATION UPDATE
+const updateVoterRegistrationStringBuilder = (newUrl) => {
+    elizabethSanger.voterRegistrationUrl = newUrl;
+    voterRegistrationStringBuilder();
+};
 
-// const updateVoterRegistrationStringBuilder = (newUrl) => {
-//     elizabethSanger.voterRegistrationUrl = newUrl;
-//     voterRegistrationStringBuilder();
-// };
+// DONATION UPDATE
+const updateDonationFormStringBuilder = (newUrl) => {
+    elizabethSanger.donationFormUrl = newUrl;
+    donationFormStringBuilder();
+};
 
-// updateVoterRegistrationStringBuilder('www.usopen.org');
+// CONGRESSIONAL DISTRICT UPDATE
+const updateCongressionalDistrictStringBuilder = (newDistrict) => {
+    elizabethSanger.congressionalDistrict = newDistrict;
+    congressionalDistrictStringBuilder();
+};
+
+// BIOGRAPHY UPDATE
+const updateBiographyStringBuilder = (updateString) => {
+    elizabethSanger.biography = updateString;
+    biographyStringBuilder();
+};
+
+// MISSION STATEMENT UPDATE
+const updateMissionStatementStringBuilder = (updateString) => {
+    elizabethSanger.missionStatement = updateString;
+    missionStatementStringBuilder();
+};
+
+// CHALLENGE 2 FUNCTIONS
+updateVoterRegistrationStringBuilder('www.usopen.org');
+updateDonationFormStringBuilder('www.wimbledon.org');
+updateCongressionalDistrictStringBuilder('6');
+updateBiographyStringBuilder('She is an American political scientist and diplomat. She served as the 66th United States Secretary of State.');
+updateMissionStatementStringBuilder("Be impeccable with your word. Don't take anything personally. Don't make assumptions. Always do your best.");
+
