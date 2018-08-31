@@ -161,7 +161,7 @@ const imagesStringBuilder = () => {
 
 
 // FUNCTIONS
-voterRegistrationStringBuilder();   //have to call function in order for it r
+voterRegistrationStringBuilder(); 
 donationFormStringBuilder();
 congressionalDistrictStringBuilder();
 biographyStringBuilder();
@@ -204,10 +204,23 @@ const updateMissionStatementStringBuilder = (updateString) => {
     missionStatementStringBuilder();
 };
 
+// ADD STATEMENT FUNCTION
+// const editStatements = (addStatement, addCategory) => {
+//     elizabethSanger.statements.push([addStatement, addCategory]);
+//     statementsStringBuilder();
+// };
+const editStatements = (newStatement, newCategory) => {
+    let newObject = {statement: newStatement, category: newCategory};
+    elizabethSanger.statements.push(newObject);
+    statementsStringBuilder();
+};
+
+
 // CHALLENGE 2 FUNCTIONS
 updateVoterRegistrationStringBuilder('www.usopen.org');
 updateDonationFormStringBuilder('www.wimbledon.org');
 updateCongressionalDistrictStringBuilder('6');
 updateBiographyStringBuilder('She is an American political scientist and diplomat. She served as the 66th United States Secretary of State.');
 updateMissionStatementStringBuilder("Be impeccable with your word. Don't take anything personally. Don't make assumptions. Always do your best.");
+editStatements('Affordable health care is key.', 'Health Care');
 
