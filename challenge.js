@@ -205,16 +205,42 @@ const updateMissionStatementStringBuilder = (updateString) => {
 };
 
 // ADD STATEMENT FUNCTION
-// const editStatements = (addStatement, addCategory) => {
-//     elizabethSanger.statements.push([addStatement, addCategory]);
-//     statementsStringBuilder();
-// };
-const editStatements = (newStatement, newCategory) => {
+const addStatements = (newStatement, newCategory) => {
     let newObject = {statement: newStatement, category: newCategory};
     elizabethSanger.statements.push(newObject);
     statementsStringBuilder();
 };
 
+// WORKS FOR REMOVING LAST BY USING POP
+const removeFirstStatement = (removeStatement, removeCategory) => {
+    let removeObject = {statement: removeStatement, category: removeCategory};
+    elizabethSanger.statements.shift(removeObject);
+    statementsStringBuilder();
+};
+
+// ADD DATE TO BEGININNING
+const addDate = (newDate, newTitle, newDescription) => {
+    let newEvent = {date: newDate, title: newTitle, description: newDescription};
+    elizabethSanger.events.unshift(newEvent);
+    eventsStringBuilder();
+};
+
+// ADD VOLUNTEER
+
+// ADD IMAGE
+
+
+// EDIT STATEMENT
+const editValue = (functionName, property, subProperty, newVal, index) => {
+    let newVal = elizabethSanger[property][index][subProperty];
+   functionName();
+};
+
+// REMOVE ITEM
+const removeItem = (functionName, property, index) => {
+    let remove = elizabethSanger[property][index];
+    functionName.removeChild(remove);
+};
 
 // CHALLENGE 2 FUNCTIONS
 updateVoterRegistrationStringBuilder('www.usopen.org');
@@ -222,5 +248,13 @@ updateDonationFormStringBuilder('www.wimbledon.org');
 updateCongressionalDistrictStringBuilder('6');
 updateBiographyStringBuilder('She is an American political scientist and diplomat. She served as the 66th United States Secretary of State.');
 updateMissionStatementStringBuilder("Be impeccable with your word. Don't take anything personally. Don't make assumptions. Always do your best.");
-editStatements('Affordable health care is key.', 'Health Care');
+addStatements('Affordable health care is key.', 'Health Care');
+removeFirstStatement();
+addDate('10/19/1781','Battle of Yorktown','Americans>>>British');
+
+
+
+
+//editValue(volunteersStringBuilder,'volunteer', 'phone', '901-234-2345', 1);
+//removeItem(statementsStringBuilder, 'statements', 2);
 
