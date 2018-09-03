@@ -161,7 +161,7 @@ const imagesStringBuilder = () => {
 
 
 // FUNCTIONS
-voterRegistrationStringBuilder();   //have to call function in order for it r
+voterRegistrationStringBuilder(); 
 donationFormStringBuilder();
 congressionalDistrictStringBuilder();
 biographyStringBuilder();
@@ -174,12 +174,106 @@ imagesStringBuilder();
 
 
 // CHALLENGE 2
-// add events function (adding somethign to array so use push method), 
-// add a volunteer, congressional district changes, or statement changes
+// VOTER REGISTRATION UPDATE
+const updateVoterRegistrationStringBuilder = (newUrl) => {
+    elizabethSanger.voterRegistrationUrl = newUrl;
+    voterRegistrationStringBuilder();
+};
 
-// const updateVoterRegistrationStringBuilder = (newUrl) => {
-//     elizabethSanger.voterRegistrationUrl = newUrl;
-//     voterRegistrationStringBuilder();
-// };
+// DONATION UPDATE
+const updateDonationFormStringBuilder = (newUrl) => {
+    elizabethSanger.donationFormUrl = newUrl;
+    donationFormStringBuilder();
+};
 
-// updateVoterRegistrationStringBuilder('www.usopen.org');
+// CONGRESSIONAL DISTRICT UPDATE
+const updateCongressionalDistrictStringBuilder = (newDistrict) => {
+    elizabethSanger.congressionalDistrict = newDistrict;
+    congressionalDistrictStringBuilder();
+};
+
+// BIOGRAPHY UPDATE
+const updateBiographyStringBuilder = (updateString) => {
+    elizabethSanger.biography = updateString;
+    biographyStringBuilder();
+};
+
+// MISSION STATEMENT UPDATE
+const updateMissionStatementStringBuilder = (updateString) => {
+    elizabethSanger.missionStatement = updateString;
+    missionStatementStringBuilder();
+};
+
+// ADD STATEMENT FUNCTION
+const addStatements = (newStatement, newCategory) => {
+    let newObject = {statement: newStatement, category: newCategory};
+    elizabethSanger.statements.push(newObject);
+    statementsStringBuilder();
+};
+
+// WORKS FOR REMOVING LAST BY USING POP
+const removeFirstStatement = (removeStatement, removeCategory) => {
+    let removeObject = {statement: removeStatement, category: removeCategory};
+    elizabethSanger.statements.shift(removeObject);
+    statementsStringBuilder();
+};
+
+// ADD DATE TO BEGININNING
+const addDate = (newDate, newTitle, newDescription) => {
+    let newEvent = {date: newDate, title: newTitle, description: newDescription};
+    elizabethSanger.events.unshift(newEvent);
+    eventsStringBuilder();
+};
+
+// ADD VOLUNTEER
+const addVolunteer = (newName, newAddress, newEmail, newPhone, newAvail, newActivities) => {
+    let newVolunteer = {name: newName, address: newAddress, email: newEmail, phone: newPhone, availability: newAvail, activities: newActivities};
+    elizabethSanger.volunteers.push(newVolunteer);
+    volunteersStringBuilder();
+};
+
+// ADD IMAGE
+const addImage = (newImage, newImageDesc, newType) => {
+    let newImageCard = {imageUrl: newImage, description: newImageDesc, type: newType};
+    elizabethSanger.images.unshift(newImageCard);
+    imagesStringBuilder();
+};
+
+// REMOVE LAST IMAGE
+const removeLastImage = (removeImage, removeDesc, removeType) => {
+    let removeImageCard = {imageUrl: removeImage, description: removeDesc, type: removeType};
+    elizabethSanger.images.pop(removeImageCard);
+    imagesStringBuilder();
+
+};
+
+// EDIT STATEMENT
+const editValue = (functionName, property, subProperty, newVal, index) => {
+    let newVal = elizabethSanger[property][index][subProperty];
+   functionName();
+};
+
+// REMOVE ITEM
+const removeItem = (functionName, property, index) => {
+    let remove = elizabethSanger[property][index];
+    functionName.removeChild(remove);
+};
+
+// CHALLENGE 2 FUNCTIONS
+updateVoterRegistrationStringBuilder('www.usopen.org');
+updateDonationFormStringBuilder('www.wimbledon.org');
+updateCongressionalDistrictStringBuilder('6');
+updateBiographyStringBuilder('She is an American political scientist and diplomat. She served as the 66th United States Secretary of State.');
+updateMissionStatementStringBuilder("Be impeccable with your word. Don't take anything personally. Don't make assumptions. Always do your best.");
+addStatements('Affordable health care is key.', 'Health Care');
+removeFirstStatement();
+addDate('10/19/1781','Battle of Yorktown','Americans>>>British');
+addVolunteer('Eliza Hamilton', '1789 Quiet Uptown, New York, NY', 'eliza@schuylersister.com', '439-435-0139', 'afternoons', 'writing, giving speeches, babysitting');
+addImage('https://pmcvariety.files.wordpress.com/2016/06/the-women-of-hamilton-broadway.jpg?w=1000','Sanger Sisters','Family');
+removeLastImage();
+
+
+
+//editValue(volunteersStringBuilder,'volunteer', 'phone', '901-234-2345', 1);
+//removeItem(statementsStringBuilder, 'statements', 2);
+
