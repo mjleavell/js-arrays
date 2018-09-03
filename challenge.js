@@ -226,9 +226,26 @@ const addDate = (newDate, newTitle, newDescription) => {
 };
 
 // ADD VOLUNTEER
+const addVolunteer = (newName, newAddress, newEmail, newPhone, newAvail, newActivities) => {
+    let newVolunteer = {name: newName, address: newAddress, email: newEmail, phone: newPhone, availability: newAvail, activities: newActivities};
+    elizabethSanger.volunteers.push(newVolunteer);
+    volunteersStringBuilder();
+};
 
 // ADD IMAGE
+const addImage = (newImage, newImageDesc, newType) => {
+    let newImageCard = {imageUrl: newImage, description: newImageDesc, type: newType};
+    elizabethSanger.images.unshift(newImageCard);
+    imagesStringBuilder();
+};
 
+// REMOVE LAST IMAGE
+const removeLastImage = (removeImage, removeDesc, removeType) => {
+    let removeImageCard = {imageUrl: removeImage, description: removeDesc, type: removeType};
+    elizabethSanger.images.pop(removeImageCard);
+    imagesStringBuilder();
+
+};
 
 // EDIT STATEMENT
 const editValue = (functionName, property, subProperty, newVal, index) => {
@@ -251,7 +268,9 @@ updateMissionStatementStringBuilder("Be impeccable with your word. Don't take an
 addStatements('Affordable health care is key.', 'Health Care');
 removeFirstStatement();
 addDate('10/19/1781','Battle of Yorktown','Americans>>>British');
-
+addVolunteer('Eliza Hamilton', '1789 Quiet Uptown, New York, NY', 'eliza@schuylersister.com', '439-435-0139', 'afternoons', 'writing, giving speeches, babysitting');
+addImage('https://pmcvariety.files.wordpress.com/2016/06/the-women-of-hamilton-broadway.jpg?w=1000','Sanger Sisters','Family');
+removeLastImage();
 
 
 
