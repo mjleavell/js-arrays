@@ -244,20 +244,19 @@ const removeLastImage = (removeImage, removeDesc, removeType) => {
     let removeImageCard = {imageUrl: removeImage, description: removeDesc, type: removeType};
     elizabethSanger.images.pop(removeImageCard);
     imagesStringBuilder();
-
 };
 
 // EDIT STATEMENT
-const editValue = (functionName, property, subProperty, newVal, index) => {
-    let newVal = elizabethSanger[property][index][subProperty];
-   functionName();
-};
+// const editValue = (functionName, property, subProperty, newVal, index) => {
+//     let newVal = elizabethSanger[property][index][subProperty];
+//    functionName();
+// };
 
 // REMOVE ITEM
-const removeItem = (functionName, property, index) => {
-    let remove = elizabethSanger[property][index];
-    functionName.removeChild(remove);
-};
+// const removeItem = (functionName, property, index) => {
+//     let remove = elizabethSanger[property][index];
+//     functionName.removeChild(remove);
+// };
 
 // CHALLENGE 2 FUNCTIONS
 updateVoterRegistrationStringBuilder('www.usopen.org');
